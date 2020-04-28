@@ -1,0 +1,40 @@
+<h2 class="float-right">Punctaj:{{ punctaj }}</h2>
+<div class="d-flex">
+  <ul class="justify-content-center mx-auto">
+    <li
+      *ngFor="
+        let question of questions
+          | paginate: { itemsPerPage: 1, currentPage: page }
+      "
+    >
+      <div class="Question">
+        <p>Intrebare: {{ question.Question }}</p>
+      </div>
+
+      <div class="CorectAnswer">
+        <p>Raspuns1: {{ question.CorectAnswer }}</p>
+        <input
+          type="checkbox"
+          class="form-check-input"
+          [(ngModel)]="corectAnswer"
+          [disabled]="isDisabled"
+        />
+      </div>
+
+      <div class="Answer1">
+        <p>Raspuns2: {{ question.Answer1 }}</p>
+        <input type="checkbox" class="form-check-input" [(ngModel)]="answer1" />
+      </div>
+
+      <div class="Answer2">
+        <p>Raspuns2: {{ question.Answer2 }}</p>
+        <input type="checkbox" class="form-check-input" [(ngModel)]="answer2" />
+      </div>
+    </li>
+    <pagination-controls
+      class=""
+      (pageChange)="page = $event"
+      (click)="checkAnswer()"
+    ></pagination-controls>
+  </ul>
+</div>

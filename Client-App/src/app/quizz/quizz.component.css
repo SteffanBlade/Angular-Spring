@@ -1,0 +1,8 @@
+div input {
+  display: inline;
+}
+
+div p {
+  display: inline-block;
+  width: 300px;
+}

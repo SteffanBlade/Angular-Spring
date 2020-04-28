@@ -1,0 +1,53 @@
+<div class="container addquestion">
+  <form (submit)="sendQuestion()">
+    <div class="form-group">
+      <label for="Question">Question</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Question"
+        placeholder="Enter Question"
+        [(ngModel)]="questionModel.Question"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Answer">CorectAnswer</label>
+      <input
+        type="text"
+        class="form-control"
+        id="CorectAnswer"
+        placeholder="CorectAnswer"
+        [(ngModel)]="questionModel.CorectAnswer"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Answer1">Answer 1</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Answer1"
+        placeholder="Answer1"
+        [(ngModel)]="questionModel.Answer1"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Answer2">Answer 2</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Answer2"
+        placeholder="Answer2"
+        [(ngModel)]="questionModel.Answer2"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
